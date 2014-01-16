@@ -1,0 +1,28 @@
+#!/usr/bin/perl
+
+
+### CURRENCY CONVERTER
+### USAGE: xe <amount> <src_currency> <dst_currency>
+###
+use strict;
+use warnings;
+use Finance::Currency::Convert::XE;
+
+my $value = shift || die;
+my $src_cur = shift  || die;
+my $dst_cur = shift || die;
+
+
+
+  my $obj = Finance::Currency::Convert::XE->new()
+                || die "Failed to create object\n" ;
+
+  my $dstvalue = $obj->convert(
+                    'source' => uc($src_cur),
+                    'target' => uc($dst_cur),
+                    'value' => $value,
+                    'format' => 'abbv'
+            )   || die "Could not convert: " . $obj->error . "\n";
+
+print $dstvalue . "\n";
+
