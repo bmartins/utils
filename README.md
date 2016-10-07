@@ -3,7 +3,7 @@
 
 ## Subtitle Downloader
 
-Usage: download_sub <movie_file>
+Usage: download_sub file.mp4
 
 ## XE - Currency converter
 
