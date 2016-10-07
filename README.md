@@ -7,4 +7,4 @@ Usage: download_sub file.mp4
 
 ## XE - Currency converter
 
-USAGE: xe <amount> <src_currency> <dst_currency>
+USAGE: xe _amount_ _src_currency_ _dst_currency_
