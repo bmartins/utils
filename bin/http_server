@@ -1,0 +1,15 @@
+#!/bin/sh
+PORT=${1:-8000}
+re='^[0-9]+$'
+if ! [[ $PORT =~ $re ]] ; then
+   echo "error: PORT needs to be a number" >&2; exit 1
+fi
+
+if [ "$PORT" -gt "1024" ]; then
+    python -m SimpleHTTPServer $PORT
+else
+    echo "Need to run this with sudo !!!!"
+    sudo python -m SimpleHTTPServer $PORT
+fi
+
+
